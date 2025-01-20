@@ -1,5 +1,7 @@
-import Icons from "./components/Icons";
+import { Header } from "./components/Header";
+import Icons from "./components/Icons/Icons";
 import { EMAIL, PHONE_NUMBER } from "./config/constants";
+import { About, BrandsWeCarry, Contact } from "./pages";
 
 function App() {
   const showTemp = true;
@@ -40,40 +42,12 @@ function App() {
 
   return (
     <>
-      <header className="w-screen">
-        <section className="bg-blue-800">
-          <a href={`tel: + ${PHONE_NUMBER}`}>
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              width="24"
-              height="24"
-              viewBox="0 0 24 24"
-              fill="none"
-              stroke="currentColor"
-              stroke-width="2"
-              stroke-linecap="round"
-              stroke-linejoin="round"
-              className="lucide lucide-phone"
-            >
-              <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z" />
-            </svg>
-          </a>
-          <a href={`mailto: + ${EMAIL}`} target="_blank">
-            <Icons classNames="" iconName={ "email" } />
-          </a>
-        </section>
-        <nav className="w-full px-14 py-3 flex justify-between items-center bg-[#0e1b23]">
-          <h1 className="text-[35px]">
-            Neighbors<span className="text-blue-600">Restock</span>
-          </h1>
-          <ul className="*:list-none text-[16px] tracking-[3px] text-nowrap uppercase flex justify-between items-center md:w-[auto] lg:w-[450px] border-pink-400 border-solid border-[2px]">
-            <li>About Us</li>
-            <li>Brands We Carry</li>
-            <li>Contact</li>
-          </ul>
-        </nav>
-      </header>
-      <main>{showTemp && <UnderConstruction />}</main>
+      <Header />
+      <main>
+        <About />
+        <BrandsWeCarry />
+        <Contact />
+      </main>
     </>
   );
 }

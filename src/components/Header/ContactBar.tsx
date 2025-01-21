@@ -6,10 +6,10 @@ export const ContactBar = () => {
     <header className="w-screen h-auto">
       <section className="bg-blue-800">
         <a href={`tel: + ${PHONE_NUMBER}`}>
-          <Icons iconName="phone" />
+          <Icons iconName="PHONE" />
         </a>
         <a href={`mailto: + ${EMAIL}`} target="_blank">
-          <Icons iconName="email" />
+          <Icons iconName="EMAIL" />
         </a>
       </section>
     </header>

@@ -3,7 +3,7 @@ import { APP_ROUTES } from "../../config/constants";
 
 export const StickyNavbar = () => {
   return (
-    <nav className="w-full z-10 sticky top-0 px-14 py-3 flex justify-between items-center bg-[#0e1b23]">
+    <nav className="w-full z-20 sticky top-0 px-14 py-3 flex justify-between items-center bg-[#0e1b23]">
       <h1 className="text-[35px]">
         Neighbors<span className="text-blue-600">Restock</span>
       </h1>

@@ -1,9 +1,9 @@
 import type React from "react";
 
-const NotFound: React.FC = () => {
+export const NotFound: React.FC = () => {
   return (
     <div className="min-h-screen flex flex-col items-center justify-center bg-[#0e1b23] text-white font-sans relative overflow-hidden">
-      <div className="z-10 px-4 sm:px-6 lg:px-8 text-center">
+      <div className="z-10 px-4 sm:px-6 lg:px-8 text-center justify-self-start">
         <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold mb-2 sm:mb-4">
           404
         </h1>
@@ -19,7 +19,7 @@ const NotFound: React.FC = () => {
           Go Back Home
         </a>
       </div>
-      <div className="absolute bottom-0 left-0 right-0 w-full">
+      <div className="absolute bottom-0 left-0 right-0 w-screen">
         <svg
           className="waves"
           xmlns="http://www.w3.org/2000/svg"
@@ -61,7 +61,7 @@ const NotFound: React.FC = () => {
             />
             <use
               xlinkHref="#gentle-wave"
-              x="180"
+              x="190"
               y="9"
               fill="rgba(255,255,255,0.3)"
             />
@@ -85,7 +85,7 @@ const NotFound: React.FC = () => {
 
           .waves {
             position: relative;
-            width: 100%;
+            width: 150%;
             height: 15vh;
             margin-bottom: -7px;
             min-height: 100px;
@@ -164,5 +164,3 @@ const NotFound: React.FC = () => {
     </div>
   );
 };
-
-export default NotFound;

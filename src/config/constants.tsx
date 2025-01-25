@@ -1,3 +1,5 @@
+import { CardInfo } from "./types";
+
 export const PHONE_NUMBER = "123-456-7890";
 export const EMAIL = "abc@xyz.com";
 export const ICONS = {
@@ -35,6 +37,25 @@ export const ICONS = {
     </svg>
   ),
 } as const;
+
+export const HERO_IMAGE_BUTTON_TEXT = "Learn about us";
+export const CARD_INFO: CardInfo[] = [
+  {
+    title: "Advertising that converts",
+    bodyText:
+      "We invest our own marketing dollars into custom advertising campaigns for your brand on Amazon, increasing your sales and positioning your products ahead of your competitors.",
+  },
+  {
+    title: "PRODUCT LISTING REFRESH",
+    bodyText:
+      "We invest our own marketing dollars into custom advertising campaigns for your brand on Amazon, increasing your sales and positioning your products ahead of your competitors.",
+  },
+  {
+    title: 'WE GET AMAZON',
+    bodyText:
+      "We invest our own marketing dollars into custom advertising campaigns for your brand on Amazon, increasing your sales and positioning your products ahead of your competitors.",
+  },
+];
 
 export const APP_ROUTES = {
   LANDING: "/",

@@ -14,7 +14,7 @@ export const Landing = () => {
         <HoveredButton text={HERO_IMAGE_BUTTON_TEXT} />
       </section>
       <section className="w-screen flex justify-around items-center py-[100px] flex-col px-[25px] bg-slate-100">
-        <p className="text-[#77777] mb-[20px]">
+        <p className="text-[#77777] text-[18px] mb-[20px] w-[70%]">
           Lorem ipsum dolor sit amet consectetur adipisicing elit. Minus totam
           consectetur quas quidem consequatur error cum reprehenderit laborum
           unde rem.

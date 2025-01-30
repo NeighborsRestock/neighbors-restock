@@ -7,7 +7,7 @@ export const StickyNavbar = () => {
       <h1 className="text-[35px]">
         Neighbors<span className="text-blue-600">Restock</span>
       </h1>
-      <ul className="*:list-none text-[16px] tracking-[3px] text-nowrap uppercase flex justify-between items-center md:w-[auto] lg:w-[450px] border-pink-400 border-solid border-[2px]">
+      <ul className="*:list-none text-[16px] tracking-[3px] text-nowrap uppercase flex justify-between items-center w-[550px] border-pink-400 border-solid border-[2px]">
         <li>About Us</li>
         <li>Brands We Carry</li>
         <li>Contact</li>

@@ -7,6 +7,9 @@ export default {
   ],
   theme: {
   	extend: {
+      fontSize: {
+        clamp: "clamp(1rem, 1.4vw, 3rem)",
+      },
   		borderRadius: {
   			lg: 'var(--radius)',
   			md: 'calc(var(--radius) - 2px)',

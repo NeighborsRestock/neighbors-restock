@@ -4,7 +4,7 @@ import Icons from "../Icons/Icons";
 export const ContactBar = () => {
   return (
     <header className="w-screen h-auto">
-      <section className="bg-blue-800">
+      <section className="bg-blue-800 flex justify-end items-center">
         <a href={`tel: + ${PHONE_NUMBER}`}>
           <Icons iconName="PHONE" />
         </a>

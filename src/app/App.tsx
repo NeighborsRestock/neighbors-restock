@@ -1,4 +1,4 @@
-import { Navigate, Route, Routes } from "react-router-dom";
+import { Route, Routes } from "react-router-dom";
 import { BrandsWeCarry, Landing, Contact, NotFound } from "@/pages";
 import { APP_ROUTES } from "@/config/constants";
 import { Header } from "@/components/Header";

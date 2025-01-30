@@ -1,7 +1,11 @@
+import { Footer } from "@/components/Footer/Footer";
 import React from "react";
 
-type Props = {};
-
-export const Contact = (props: Props) => {
-  return <div className="bg-purple-950 w-screen h-screen">Contact</div>;
+export const Contact = () => {
+  return (
+    <>
+      <main className="bg-purple-950 w-screen h-screen font-sans">Contact</main>
+      <Footer />
+    </>
+  );
 };

@@ -1,9 +1,10 @@
-import React from 'react'
+import { Footer } from "@/components/Footer/Footer";
 
-type Props = {}
-
-export const BrandsWeCarry = (props: Props) => {
+export const BrandsWeCarry = () => {
   return (
-    <div className='bg-green-700 w-screen h-screen'>BrandsWeCarry</div>
-  )
-}
+    <>
+      <main className="bg-slate-100 w-screen h-screen">BrandsWeCarry</main>;
+      <Footer />
+    </>
+  );
+};

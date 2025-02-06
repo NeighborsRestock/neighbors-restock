@@ -9,6 +9,7 @@ export default {
   	extend: {
       fontSize: {
         clamp: "clamp(1rem, 1.4vw, 3rem)",
+        'clamp-1': "clamp(2rem, 5.5vw, 3.7rem)",
       },
   		borderRadius: {
   			lg: 'var(--radius)',

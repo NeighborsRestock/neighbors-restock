@@ -5,7 +5,7 @@ import { BrowserRouter } from "react-router-dom";
 import "./index.css";
 createRoot(document.getElementById("root")!).render(
   <StrictMode>
-    <BrowserRouter basename="/neighbors-restock/">
+    <BrowserRouter basename="/neighbors-restock">
       <App />
     </BrowserRouter>
   </StrictMode>

@@ -2,6 +2,7 @@ import { Route, Routes } from "react-router-dom";
 import { BrandsWeCarry, Landing, Contact, NotFound } from "@/pages";
 import { APP_ROUTES } from "@/config/constants";
 import { Header } from "@/components/Header";
+import { Footer } from "@/components/Footer/Footer";
 
 function App() {
   return (
@@ -13,6 +14,7 @@ function App() {
         <Route path={`${APP_ROUTES.CONTACT}`} element={<Contact />} />
         <Route path="/404" element={<NotFound />} />
       </Routes>
+      <Footer />
     </>
   );
 }

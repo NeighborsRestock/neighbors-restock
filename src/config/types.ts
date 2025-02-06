@@ -5,3 +5,8 @@ export type CardInfo = {
     title: string;
     bodyText: string;
 };
+
+export type BrandInfo = {
+    key: string;
+    imageUrl: string;
+};

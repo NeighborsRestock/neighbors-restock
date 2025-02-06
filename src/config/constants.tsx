@@ -1,4 +1,4 @@
-import { CardInfo } from "./types";
+import { BrandInfo, CardInfo } from "./types";
 
 export const PHONE_NUMBER = "123-456-7890";
 export const EMAIL = "abc@xyz.com";
@@ -38,6 +38,18 @@ export const ICONS = {
   ),
 } as const;
 
+export const BRANDS: BrandInfo[] = [
+  {
+    key: "Placeholder Company 1",
+    imageUrl: "logo-1.jpg",
+  },
+  // { key: "Placeholder Company 2", imageUrl: "../assets/placeholder_image.png" },
+  // { key: "Placeholder Company 3", imageUrl: "../assets/placeholder_image.png" },
+  // { key: "Placeholder Company 4", imageUrl: "../assets/placeholder_image.png" },
+  // { key: "Placeholder Company 5", imageUrl: "../assets/placeholder_image.png" },
+  // { key: "Placeholder Company 6", imageUrl: "../assets/placeholder_image.png" },
+];
+
 export const HERO_IMAGE_BUTTON_TEXT = "Learn about us";
 export const CARD_INFO: CardInfo[] = [
   {
@@ -51,7 +63,7 @@ export const CARD_INFO: CardInfo[] = [
       "We invest our own marketing dollars into custom advertising campaigns for your brand on Amazon, increasing your sales and positioning your products ahead of your competitors.",
   },
   {
-    title: 'WE GET AMAZON',
+    title: "WE GET AMAZON",
     bodyText:
       "We invest our own marketing dollars into custom advertising campaigns for your brand on Amazon, increasing your sales and positioning your products ahead of your competitors.",
   },

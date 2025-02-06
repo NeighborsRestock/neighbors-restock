@@ -9,4 +9,5 @@ export type CardInfo = {
 export type BrandInfo = {
     key: string;
     imageUrl: string;
+    brandUrl?: string;
 };

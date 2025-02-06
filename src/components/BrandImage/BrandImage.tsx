@@ -49,7 +49,7 @@ export function BrandImage({
 
   return (
     <div className={`relative w-full overflow-hidden ${containerClassName}`}>
-      <div className="aspect-w-16 aspect-h-9">
+      <div className="aspect-w-16 aspect-h-5 h-[200px] p-5">
         <img
           ref={imgRef}
           src={src || "/placeholder.svg"}
@@ -60,7 +60,6 @@ export function BrandImage({
           className={`
               w-full h-full transition-opacity duration-300
               ${objectFit === "contain" ? "object-contain" : "object-cover"}
-              ${isLoaded ? "opacity-100" : "opacity-0"}
               ${className}
             `}
         />

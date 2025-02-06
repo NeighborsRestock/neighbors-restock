@@ -38,16 +38,37 @@ export const ICONS = {
   ),
 } as const;
 
+export const testBorder = (color: "red" | "blue" | "green" = "red") =>
+  `border-[${color}] border-2 border-solid`;
+
 export const BRANDS: BrandInfo[] = [
   {
     key: "Placeholder Company 1",
-    imageUrl: "logo-1.jpg",
+    imageUrl: "logo-2.png",
+    brandUrl: "",
   },
-  // { key: "Placeholder Company 2", imageUrl: "../assets/placeholder_image.png" },
-  // { key: "Placeholder Company 3", imageUrl: "../assets/placeholder_image.png" },
-  // { key: "Placeholder Company 4", imageUrl: "../assets/placeholder_image.png" },
-  // { key: "Placeholder Company 5", imageUrl: "../assets/placeholder_image.png" },
-  // { key: "Placeholder Company 6", imageUrl: "../assets/placeholder_image.png" },
+  { key: "Placeholder Company 2", imageUrl: "logo-1.jpg" },
+  { key: "Placeholder Company 3", imageUrl: "logo-2.png" },
+  { key: "Placeholder Company 4", imageUrl: "logo-3.jpeg" },
+  { key: "Placeholder Company 5", imageUrl: "logo-2.png" },
+  { key: "Placeholder Company 6", imageUrl: "logo-2.png" },
+  { key: "Placeholder Company 2", imageUrl: "logo-2.png" },
+  { key: "Placeholder Company 3", imageUrl: "logo-2.png" },
+  { key: "Placeholder Company 4", imageUrl: "logo-2.png" },
+  { key: "Placeholder Company 5", imageUrl: "logo-2.png" },
+  { key: "Placeholder Company 6", imageUrl: "logo-2.png" },
+  { key: "Placeholder Company 3", imageUrl: "logo-2.png" },
+  { key: "Placeholder Company 4", imageUrl: "logo-2.png" },
+  { key: "Placeholder Company 5", imageUrl: "logo-2.png" },
+  { key: "Placeholder Company 6", imageUrl: "logo-2.png" },
+  { key: "Placeholder Company 3", imageUrl: "logo-2.png" },
+  { key: "Placeholder Company 4", imageUrl: "logo-2.png" },
+  { key: "Placeholder Company 5", imageUrl: "logo-2.png" },
+  { key: "Placeholder Company 6", imageUrl: "logo-2.png" },
+  { key: "Placeholder Company 3", imageUrl: "logo-2.png" },
+  { key: "Placeholder Company 4", imageUrl: "logo-2.png" },
+  { key: "Placeholder Company 5", imageUrl: "logo-2.png" },
+  { key: "Placeholder Company 6", imageUrl: "logo-2.png" },
 ];
 
 export const HERO_IMAGE_BUTTON_TEXT = "Learn about us";

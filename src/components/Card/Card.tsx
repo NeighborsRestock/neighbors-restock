@@ -16,15 +16,17 @@ export const Card = ({ title, bodyText }: CardInfoProps) => {
         <h2 className="transition text-[#0e1b23] group-hover:text-blue-500 duration-400 ease-in-out text-clamp font-bold text-nowrap tracking-tight">
           {title}
         </h2>
-        <ArrowRight
-          className={cn(
-            "h-6 w-6 transition-transform group-hover:text-blue-500 text-[#0e1b23] duration-400 ease-in-out",
-            {
-              "rotate-180 group-hover:-translate-x-1": !isExpanded,
-              "rotate-90": isExpanded,
-            }
-          )}
-        />
+        <span>
+          <ArrowRight
+            className={cn(
+              "size-6 transition-transform group-hover:text-blue-500 text-[#0e1b23] duration-400 ease-in-out",
+              {
+                "rotate-180 group-hover:-translate-x-1": !isExpanded,
+                "rotate-90": isExpanded,
+              }
+            )}
+          />
+        </span>
       </section>
       <p
         className={cn(

@@ -1,15 +1,18 @@
 import React from "react";
-import { HoveredButton } from "@/components/HoveredButton/HoveredButton";
 import { CARD_INFO, HERO_IMAGE_BUTTON_TEXT } from "@/config/constants";
 import { Card } from "@/components/Card";
+import { ParallaxHero } from "@/components/ParallaxHero/ParallexHero";
 
 export const Landing = () => {
   return (
     <main className="w-screen">
-      <section className="bg-gray-700 w-screen h-[93vh] text-[25px] font-bold flex justify-center items-center">
-        <h1>Lorem ipsum dolor sit amet consectetur adipisicing elit.</h1>
-        <HoveredButton text={HERO_IMAGE_BUTTON_TEXT} />
-      </section>
+      <ParallaxHero>
+        <section className="pb-[100px]">
+          <h1 className="text-4xl md:text-6xl font-bold mb-4">
+            {HERO_IMAGE_BUTTON_TEXT}
+          </h1>
+        </section>
+      </ParallaxHero>
       <section className="w-screen h-auto flex justify-around items-center py-[100px] flex-col px-[25px] bg-slate-100">
         <p className="text-gray-700 text-[18px] font-[550] mb-[20px] w-[70%]">
           Lorem ipsum dolor sit amet consectetur adipisicing elit. Minus totam

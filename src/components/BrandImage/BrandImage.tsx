@@ -1,3 +1,4 @@
+import { testBorder } from "@/config/constants";
 import { useState, useEffect, useRef } from "react";
 
 interface BrandImageProps {
@@ -49,20 +50,22 @@ export function BrandImage({
 
   return (
     <div className={`relative w-full overflow-hidden ${containerClassName}`}>
-      <div className="aspect-w-16 aspect-h-5 h-[200px] p-5">
-        <img
-          ref={imgRef}
-          src={src || "/placeholder.svg"}
-          alt={alt}
-          width={width}
-          height={height}
-          onLoad={handleImageLoad}
-          className={`
+      <div className="aspect-auto h-[20vh]">
+        {src && (
+          <img
+            ref={imgRef}
+            src={src}
+            alt={alt}
+            width={width}
+            height={height}
+            onLoad={handleImageLoad}
+            className={`
               w-full h-full transition-opacity duration-300
               ${objectFit === "contain" ? "object-contain" : "object-cover"}
               ${className}
             `}
-        />
+          />
+        )}
       </div>
     </div>
   );

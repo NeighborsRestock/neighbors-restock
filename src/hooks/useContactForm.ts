@@ -1,3 +1,4 @@
+import { EMAIL } from "@/config/constants";
 import { ChangeEvent, FormEvent, useReducer } from "react";
 
 type ContactFormState = {
@@ -23,7 +24,7 @@ const useContactForm = () => {
   const [ state, dispatch ] = useReducer(formReducer, initState);
 
   function handleFormChange (e: ChangeEvent<HTMLInputElement | HTMLTextAreaElement>, callback?: () => void) {
-   if(callback) callback()
+    if (callback) callback();
     dispatch({
       type: 'FIELD_CHANGE',
       fieldName: e.target.name.toLocaleLowerCase() as keyof ContactFormState,
@@ -34,6 +35,8 @@ const useContactForm = () => {
   function handleFormSubmit (e: FormEvent): void {
     e.preventDefault();
     console.log('Email submitted:', state);
+    window.location.href = `
+              mailto:${EMAIL}?body=${state.message}&subject=${encodeURI(state.name ?? "")} from ${encodeURI(state.company ?? "")}`;
     // You can send the data to an API here
     dispatch({ type: 'RESET' }); // Reset the form after submission
   };

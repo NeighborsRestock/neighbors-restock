@@ -2,14 +2,12 @@ import FloatingLabelInput from "@/components/FloatingInput/FloatingInput";
 import Icons from "@/components/Icons/Icons";
 import { ParallaxHero } from "@/components/ParallaxHero/ParallexHero";
 import { CONTACT_US_SUBTEXT, CONTACT_US_TITLE } from "@/config/constants";
-import useDeviceSize from "@/hooks/useDeviceSize";
 import { cn } from "@/lib/utils";
 import { useState } from "react";
 
 export const Contact = () => {
   const [value, setValue] = useState("");
   const [isSubmitActive, setIsSubmitActive] = useState(false);
-  const isMobile = useDeviceSize() === 'mobile';
 
   const handleChange = (e: React.ChangeEvent<HTMLTextAreaElement>) => {
     setValue(e.target.value);
@@ -25,11 +23,9 @@ export const Contact = () => {
       <ParallaxHero>
         <section className="flex flex-col desktop:h-screen size-full font-sans px-[100px] pb-[150px] pt-[75px] tablet:pt-[20px] mobile:pt-[15px] mobile:px-[40px]">
           <section className="text-center py-[50px]">
-            {(
-              <h1 className="text-4xl tablet:text-2xl font-exo pb-[20px] font-semibold">
-                {CONTACT_US_TITLE}
-              </h1>
-            )}
+            <h1 className="text-4xl tablet:text-2xl font-exo pb-[20px] font-semibold">
+              {CONTACT_US_TITLE}
+            </h1>
             <h4 className="font-exo text-xl">{CONTACT_US_SUBTEXT}</h4>
           </section>
           <section className="size-full">

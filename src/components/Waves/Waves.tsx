@@ -140,13 +140,13 @@ export const Waves = ({ color = "#fff", zIndex = 0 }: WavesProps) => {
      }
      @media (max-width: 768px) {
        .waves {
-         height: 40px;
-         min-height: 40px;
+         height: 30vh;
+         min-height: 100px;
        }
      }
      @media (max-width: 480px) {
        .waves {
-         height: 30px;
+         height: 200px;
          min-height: 30px;
        }
        .parallax > use {
@@ -155,9 +155,9 @@ export const Waves = ({ color = "#fff", zIndex = 0 }: WavesProps) => {
      }
      @media (min-width: 1024px) {
        .waves {
-         height: 20vh;
+         height: 40vh;
          min-height: 150px;
-         max-height: 200px;
+         max-height: 275px;
        }
      }
    `}

@@ -6,9 +6,9 @@ export const EMAIL = "abc@xyz.com";
 
 export const HERO_TEXT = "Learn about us";
 
-export const CONTACT_US_TITLE = `Interested in partnering with BrandRocket, or want to ask a question?`;
+export const CONTACT_US_TITLE = `Interested in partnering with us, or want to ask a question?`;
 
-export const CONTACT_US_SUBTEXT = `Shoot us an email or give us a call.`;
+export const CONTACT_US_SUBTEXT = `Send us a message and we'll get back to you in 1 to 2 business days`;
 
 export const ABOUT_US_SUMMARY = `
 Lorem ipsum dolor sit amet consectetur 

@@ -1,5 +1,3 @@
-import { Link } from "react-router-dom";
-import { APP_ROUTES, LINKS } from "@/config/routes";
 import useDeviceSize from "@/hooks/useDeviceSize";
 import Icons from "../Icons/Icons";
 import { NavLinks } from "./NavLinks";
@@ -43,10 +41,11 @@ export const StickyNavbar = () => {
             className={`
               overflow-hidden z-40
               transition-all duration-500 ease-in-out *:mb-[10px]
-              ${isCollapsed ? "h-[150px]" : "h-[0px]"} 
+              *:transition-all *:duration-300 *:ease-in-out 
+              ${isCollapsed ? "h-[150px] *:opacity-1" : "h-[0px] *:opacity-0"} 
               pr-[10px] border-r-blue-500 border-solid 
               border-r-2 absolute right-0 
-              flex flex-col justify-around text-nowrap text-right 
+              flex flex-col justify-between text-nowrap text-right 
               top-[50px]`}
           />
         </div>

@@ -1,4 +1,6 @@
 /** @type {import('tailwindcss').Config} */
+const plugin = require("tailwindcss/plugin");
+
 export default {
     darkMode: ["class"],
     content: [
@@ -6,6 +8,14 @@ export default {
     "./src/**/*.{js,ts,jsx,tsx}",
   ],
   theme: {
+    screens: {
+      'tablet': {'max': '900px'},
+      // => @media (max-width: 900px) { ... }
+      'mobile': {'max': '700px'},
+      // => @media (max-width: 700px) { ... }
+      'desktop': {'min': '701px'},
+      // => @media (min-width: 700px) { ... }
+    },
   	extend: {
       fontSize: {
         clamp: "clamp(1rem, 1.4vw, 3rem)",
@@ -20,8 +30,19 @@ export default {
         "lato": ['Lato', 'sans-serif'],
         "exo": ['Exo', 'sans-serif']
       },
-  		colors: {}
+  		colors: {},
+      zIndex:{
+        max: '9999',
+      },
   	}
   },
-  plugins: [require("tailwindcss-animate")],
+  plugins: [require("tailwindcss-animate"), 
+    function({addUtilities}){
+      addUtilities({
+        ".debug-r": {
+            border: '2px solid red', // Custom red border
+          },
+        })
+    }
+  ],
 }

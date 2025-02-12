@@ -23,3 +23,10 @@
     --radius: 0.5rem;
   }
 }
+
+@layer components{
+  .masked::after {
+    content: "";
+    @apply absolute inset-0 w-screen h-screen bg-black opacity-70;
+  }
+}

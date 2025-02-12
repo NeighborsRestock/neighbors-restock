@@ -1,12 +1,6 @@
 import type React from "react";
 import { useState } from "react";
-
-interface FloatingLabelInputProps {
-  id: string;
-  label: string;
-  pattern?: string;
-  type?: string;
-}
+import { FloatingLabelInputProps } from "./FloatingInput.types";
 
 export default function FloatingLabelInput({
   id,

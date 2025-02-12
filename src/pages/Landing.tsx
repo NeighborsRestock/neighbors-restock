@@ -1,5 +1,10 @@
 import React from "react";
-import { CARD_INFO, HERO_IMAGE_BUTTON_TEXT } from "@/config/constants";
+import {
+  ABOUT_US_SUMMARY,
+  ABOUT_US_TITLE,
+  CARD_INFO,
+  HERO_TEXT,
+} from "@/config/constants";
 import { Card } from "@/components/Card";
 import { ParallaxHero } from "@/components/ParallaxHero/ParallexHero";
 
@@ -8,21 +13,17 @@ export const Landing = () => {
     <main className="w-screen">
       <ParallaxHero>
         <section className="pb-[100px]">
-          <h1 className="text-4xl md:text-6xl font-bold mb-4">
-            {HERO_IMAGE_BUTTON_TEXT}
-          </h1>
+          <h1 className="text-4xl font-exo md:text-6xl mb-4">{HERO_TEXT}</h1>
         </section>
       </ParallaxHero>
       <section className="w-screen h-auto flex justify-around items-center py-[100px] flex-col px-[25px] bg-slate-100">
         <p className="text-gray-700 text-[18px] font-[550] mb-[20px] w-[70%]">
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Minus totam
-          consectetur quas quidem consequatur error cum reprehenderit laborum
-          unde rem.
+          {ABOUT_US_SUMMARY}
         </p>
         <h3 className="text-[45px] mb-[30px] font-exo text-[#212529] font-[700]">
-          Here's About US
+          {ABOUT_US_TITLE}
         </h3>
-        <div className="flex justify-center items-start">
+        <div className="flex justify-center items-start tablet:flex-col tablet:mb-[5px]">
           {CARD_INFO.map((info, idx) => {
             return <Card key={`0${idx}`} {...info} />;
           })}

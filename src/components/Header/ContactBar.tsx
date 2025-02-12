@@ -8,13 +8,13 @@ export const ContactBar = () => {
         <a href={`tel: + ${PHONE_NUMBER}`}>
           <Icons
             iconName="PHONE"
-            className="transition-colors rounded-[7px] p-[5px] hover:bg-blue-900"
+            className="transition-colors rounded-[7px] size-[30px] p-[5px] hover:bg-blue-900"
           />
         </a>
         <a href={`mailto: + ${EMAIL}`} target="_blank">
           <Icons
             iconName="EMAIL"
-            className="transition-colors rounded-[7px] p-[5px] hover:bg-blue-900"
+            className="transition-colors rounded-[7px] size-[30px] p-[5px] hover:bg-blue-900"
           />
         </a>
       </section>

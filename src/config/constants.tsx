@@ -1,8 +1,44 @@
 import { BrandInfo, CardInfo } from "./types";
 
 export const PHONE_NUMBER = "123-456-7890";
+
 export const EMAIL = "abc@xyz.com";
+
+export const HERO_TEXT = "Learn about us";
+
+export const CONTACT_US_TITLE = `Interested in partnering with BrandRocket, or want to ask a question?`;
+
+export const CONTACT_US_SUBTEXT = `Shoot us an email or give us a call.`;
+
+export const ABOUT_US_SUMMARY = `
+Lorem ipsum dolor sit amet consectetur 
+adipisicing elit. Minus totam consectetur quas 
+quidem consequatur error cum reprehenderit laborum unde rem.
+`;
+
+export const ABOUT_US_TITLE = "Here's about us";
+
+export const BRANDS_TITLE = "Our Partners";
+
 export const ICONS = {
+  MENU: (
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      width="24"
+      height="24"
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      strokeWidth="2"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      className="lucide lucide-menu"
+    >
+      <line x1="4" x2="20" y1="12" y2="12" />
+      <line x1="4" x2="20" y1="6" y2="6" />
+      <line x1="4" x2="20" y1="18" y2="18" />
+    </svg>
+  ),
   SUBMIT: (
     <svg
       xmlns="http://www.w3.org/2000/svg"
@@ -11,9 +47,9 @@ export const ICONS = {
       viewBox="0 0 24 24"
       fill="none"
       stroke="currentColor"
-      stroke-width="2"
-      stroke-linecap="round"
-      stroke-linejoin="round"
+      strokeWidth="2"
+      strokeLinecap="round"
+      strokeLinejoin="round"
       className="lucide lucide-send-horizontal"
     >
       <path d="M3.714 3.048a.498.498 0 0 0-.683.627l2.843 7.627a2 2 0 0 1 0 1.396l-2.842 7.627a.498.498 0 0 0 .682.627l18-8.5a.5.5 0 0 0 0-.904z" />
@@ -55,40 +91,13 @@ export const ICONS = {
   ),
 } as const;
 
-export const testBorder = (color: "red" | "blue" | "green" = "red") =>
-  `border-[${color}] border-2 border-solid`;
-
 export const BRANDS: BrandInfo[] = [
   {
     key: "Placeholder Company 1",
     imageUrl: "logo-2.png",
-    brandUrl: "",
   },
-  { key: "Placeholder Company 2", imageUrl: "logo-1.jpg" },
-  { key: "Placeholder Company 3", imageUrl: "logo-2.png" },
-  { key: "Placeholder Company 4", imageUrl: "logo-3.jpeg" },
-  { key: "Placeholder Company 5", imageUrl: "logo-2.png" },
-  { key: "Placeholder Company 6", imageUrl: "logo-2.png" },
-  { key: "Placeholder Company 2", imageUrl: "logo-2.png" },
-  { key: "Placeholder Company 3", imageUrl: "logo-2.png" },
-  { key: "Placeholder Company 4", imageUrl: "logo-2.png" },
-  { key: "Placeholder Company 5", imageUrl: "logo-2.png" },
-  { key: "Placeholder Company 6", imageUrl: "logo-2.png" },
-  { key: "Placeholder Company 3", imageUrl: "logo-2.png" },
-  { key: "Placeholder Company 4", imageUrl: "logo-2.png" },
-  { key: "Placeholder Company 5", imageUrl: "logo-2.png" },
-  { key: "Placeholder Company 6", imageUrl: "logo-2.png" },
-  { key: "Placeholder Company 3", imageUrl: "logo-2.png" },
-  { key: "Placeholder Company 4", imageUrl: "logo-2.png" },
-  { key: "Placeholder Company 5", imageUrl: "logo-2.png" },
-  { key: "Placeholder Company 6", imageUrl: "logo-2.png" },
-  { key: "Placeholder Company 3", imageUrl: "logo-2.png" },
-  { key: "Placeholder Company 4", imageUrl: "logo-2.png" },
-  { key: "Placeholder Company 5", imageUrl: "logo-2.png" },
-  { key: "Placeholder Company 6", imageUrl: "logo-2.png" },
 ];
 
-export const HERO_IMAGE_BUTTON_TEXT = "Learn about us";
 export const CARD_INFO: CardInfo[] = [
   {
     title: "Advertising that converts",
@@ -106,9 +115,3 @@ export const CARD_INFO: CardInfo[] = [
       "We invest our own marketing dollars into custom advertising campaigns for your brand on Amazon, increasing your sales and positioning your products ahead of your competitors.",
   },
 ];
-
-export const APP_ROUTES = {
-  LANDING: "/",
-  BRANDS: "/brands-we-carry",
-  CONTACT: "/contact",
-} as const;

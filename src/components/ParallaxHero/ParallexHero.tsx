@@ -3,12 +3,14 @@ import { useEffect, useState } from "react";
 import HeroImage from "@/assets/hero.jpg";
 
 interface ParallaxHeroProps {
+  className?: string;
   imageUrl?: string;
   children: React.ReactNode;
 }
 
 export const ParallaxHero: React.FC<ParallaxHeroProps> = ({
   imageUrl = HeroImage,
+  className,
   children,
 }) => {
   const [offsetY, setOffsetY] = useState(0);
@@ -26,7 +28,7 @@ export const ParallaxHero: React.FC<ParallaxHeroProps> = ({
   }, []);
 
   return (
-    <section className="relative h-[95vh] overflow-hidden">
+    <section className={`relative h-[95vh] overflow-hidden ${className}`}>
       <div
         className="absolute inset-0 bg-cover bg-center"
         style={{

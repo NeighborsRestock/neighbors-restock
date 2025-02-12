@@ -1,4 +1,3 @@
-import { useCallback, useEffect, useState } from "react";
 import { Waves } from "../Waves";
 import { EMAIL, PHONE_NUMBER } from "@/config/constants";
 

@@ -7,6 +7,7 @@ export default function FloatingLabelInput({
   label,
   pattern,
   type = "text",
+  onFieldChange,
 }: FloatingLabelInputProps) {
   const [value, setValue] = useState("");
 
@@ -19,9 +20,12 @@ export default function FloatingLabelInput({
         pattern={pattern}
         type={type}
         id={id}
+        name={id}
         className="peer font-exo h-10 w-full border-b-2 text-4xl md:text-2xl mb-4 text-white placeholder-transparent bg-transparent outline-none focus:outline-none"
         placeholder={label}
-        onChange={handleChange}
+        onChange={(e) => {
+          onFieldChange(e, () => handleChange(e))
+        }}
         value={value}
       />
       <label

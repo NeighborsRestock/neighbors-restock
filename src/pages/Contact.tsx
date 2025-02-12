@@ -2,12 +2,14 @@ import FloatingLabelInput from "@/components/FloatingInput/FloatingInput";
 import Icons from "@/components/Icons/Icons";
 import { ParallaxHero } from "@/components/ParallaxHero/ParallexHero";
 import { CONTACT_US_SUBTEXT, CONTACT_US_TITLE } from "@/config/constants";
+import useContactForm from "@/hooks/useContactForm";
 import { cn } from "@/lib/utils";
 import { useState } from "react";
 
 export const Contact = () => {
   const [value, setValue] = useState("");
   const [isSubmitActive, setIsSubmitActive] = useState(false);
+  const { handleFormChange, handleFormSubmit } = useContactForm();
 
   const handleChange = (e: React.ChangeEvent<HTMLTextAreaElement>) => {
     setValue(e.target.value);
@@ -34,14 +36,32 @@ export const Contact = () => {
               className="size-full flex *:flex-1 gap-[7vw] tablet:flex-col justify-between items-center"
             >
               <section className="*:mb-[20px] tablet:w-full h-full flex flex-col justify-evenly">
-                <FloatingLabelInput id={"Name"} label={"Name"} />
-                <FloatingLabelInput id={"Email"} type="email" label={"Email"} />
-                <FloatingLabelInput id={"Company"} label={"Company"} />
-                <FloatingLabelInput id={"Phone"} type="tel" label={"Phone"} />
+                <FloatingLabelInput
+                  onFieldChange={handleFormChange}
+                  id={"Name"}
+                  label={"Name"}
+                />
+                <FloatingLabelInput
+                  onFieldChange={handleFormChange}
+                  id={"Email"}
+                  type="email"
+                  label={"Email"}
+                />
+                <FloatingLabelInput
+                  onFieldChange={handleFormChange}
+                  id={"Company"}
+                  label={"Company"}
+                />
+                <FloatingLabelInput
+                  onFieldChange={handleFormChange}
+                  id={"Phone"}
+                  type="tel"
+                  label={"Phone"}
+                />
               </section>
               <section className="text-2xl h-full tablet:text-[20px] tablet:w-full border-white border-[1px] border-solid font-exo h-full flex rounded-[35px] overflow-hidden">
                 <textarea
-                  onChange={handleChange}
+                  onChange={(e) => handleFormChange(e, () => handleChange(e))}
                   className="size-full tablet:h-[300px] focus:outline-none resize-none bg-transparent p-5"
                   name="Message"
                   value={value}
@@ -49,6 +69,7 @@ export const Contact = () => {
                 />
                 <div className="h-full min-h-[170px] self-center w-[50px] relative">
                   <button
+                    onClick={handleFormSubmit}
                     className={cn(`${isSubmitActive ? "bg-green-500 left-0 rounded-l-[500%]" : "left-[100%]"} 
                     transition-transform transition-all px-[2px] duration-300 ease-in-out 
                     bg-blue-600 hover:bg-blue-800

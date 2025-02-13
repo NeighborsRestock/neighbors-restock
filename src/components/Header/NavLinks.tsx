@@ -1,5 +1,4 @@
 import { APP_ROUTES, LINKS } from "@/config/routes";
-import React from "react";
 import { Link } from "react-router-dom";
 
 export type NavLinksProps = {

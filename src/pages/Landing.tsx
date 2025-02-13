@@ -1,4 +1,3 @@
-import React from "react";
 import {
   ABOUT_US_SUMMARY,
   ABOUT_US_TITLE,

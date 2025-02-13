@@ -4,7 +4,7 @@ import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer/Footer";
 import { APP_ROUTES } from "@/config/routes";
 import FloatingLabelInput from "@/components/FloatingInput/FloatingInput";
-import { SetStateAction, ChangeEvent, useState, useEffect } from "react";
+import { ChangeEvent, useState, useEffect } from "react";
 
 function App() {
   const { pathname } = useLocation();

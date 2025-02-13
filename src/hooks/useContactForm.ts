@@ -25,7 +25,7 @@ function useContactForm () {
     });
   };
 
-  function handleFormSubmit (e: FormEvent): void {
+  function handleFormSubmit (e: FormEvent, callback?: () => void): void {
     e.preventDefault();
     if (emptyFields.length > 0) {
       setAllEmptyFields(emptyFields);
@@ -36,6 +36,7 @@ function useContactForm () {
       ?body=${state.message}
       &subject=${encodeURI(state.name ?? "")} from ${encodeURI(state.company ?? "")}`;
     dispatch({ type: 'RESET' }); // Reset the form after submission
+    if (callback) callback();
   };
 
   function _formReducer (state: ContactFormState, action: ContactFormAction) {

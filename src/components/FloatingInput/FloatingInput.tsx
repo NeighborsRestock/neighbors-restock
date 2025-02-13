@@ -6,6 +6,7 @@ import { cn } from "@/lib/utils";
 export default function FloatingLabelInput({
   id,
   label,
+  value,
   pattern,
   className,
   type = "text",
@@ -13,14 +14,10 @@ export default function FloatingLabelInput({
   isSubmitActive,
   setIsSubmitActive,
 }: FloatingLabelInputProps) {
-  const [value, setValue] = useState("");
-
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    setValue(e.target.value);
-
-    if (e.target.value !== "" && !isSubmitActive) {
+    if (e.target.value !== "") {
       setIsSubmitActive(true);
-    } else if (e.target.value === "" && isSubmitActive) {
+    } else if (e.target.value === "") {
       setIsSubmitActive(false);
     }
   };

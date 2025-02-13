@@ -5,6 +5,7 @@ export type FloatingLabelInputProps = {
   id: ContactFormInputs;
   type?: string;
   label: string;
+  value: string;
   pattern?: string;
   className?: string;
   isSubmitActive: boolean;

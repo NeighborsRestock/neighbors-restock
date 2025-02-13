@@ -8,16 +8,14 @@ import { cn } from "@/lib/utils";
 import { useState } from "react";
 
 export const Contact = () => {
-  const [value, setValue] = useState("");
   const [isSubmitActive, setIsSubmitActive] = useState(false);
-  const { handleFormChange, handleFormSubmit, allEmptyFields } =
+  const { handleFormChange, handleFormSubmit, allEmptyFields, state } =
     useContactForm();
 
   const handleChange = (e: React.ChangeEvent<HTMLTextAreaElement>) => {
-    setValue(e.target.value);
-    if (e.target.value !== "" && !isSubmitActive) {
+    if (e.target.value !== "") {
       setIsSubmitActive(true);
-    } else if (e.target.value === "" && isSubmitActive) {
+    } else if (e.target.value === "") {
       setIsSubmitActive(false);
     }
   };
@@ -44,11 +42,11 @@ export const Contact = () => {
                 className={`*:mb-[20px] tablet:w-full h-full flex flex-col justify-evenly`}
               >
                 {CONTACT_FORM_NAME.map((name, idx) => {
-                  if (name === "message") return <></>;
-                  console.log(allEmptyFields);
+                  if (name === "message") return null;
                   const temp = `${name.charAt(0).toUpperCase()}${name.slice(1)}`;
                   return (
                     <FloatingLabelInput
+                      value={state[name]}
                       key={`${name}--${idx}`}
                       type={
                         name === "phone"
@@ -67,17 +65,28 @@ export const Contact = () => {
                   );
                 })}
               </section>
-              <section className="text-2xl h-full tablet:text-[20px] tablet:w-full border-white border-[1px] border-solid font-exo h-full flex rounded-[35px] overflow-hidden">
+              <section
+                className={cn(`
+                text-2xl h-full 
+                ${allEmptyFields.includes("message") && "border-b-[red]"}
+                tablet:text-[20px] tablet:w-full border-white 
+                border-[1px] border-solid font-exo h-full 
+                flex rounded-[35px] overflow-hidden`)}
+              >
                 <textarea
                   onChange={(e) => handleFormChange(e, () => handleChange(e))}
-                  className="size-full tablet:h-[300px] focus:outline-none resize-none bg-transparent p-5"
+                  className={
+                    "size-full tablet:h-[300px] focus:outline-none resize-none bg-transparent p-5"
+                  }
                   name="Message"
-                  value={value}
+                  value={state.message}
                   placeholder="Message Us"
                 />
                 <div className="h-full min-h-[170px] self-center w-[50px] relative">
                   <button
-                    onClick={handleFormSubmit}
+                    onClick={(e) =>
+                      handleFormSubmit(e, () => setIsSubmitActive(false))
+                    }
                     className={cn(`${isSubmitActive ? "left-0 rounded-l-[50%]" : "left-[100%]"} 
                     transition-transform transition-all px-[2px] duration-300 ease-in-out 
                     bg-blue-600 hover:bg-blue-800

@@ -5,7 +5,7 @@ import { CONTACT_US_SUBTEXT, CONTACT_US_TITLE } from "@/config/constants";
 import { CONTACT_FORM_NAME } from "@/hooks/types";
 import useContactForm from "@/hooks/useContactForm";
 import { cn } from "@/lib/utils";
-import { useMemo, useState } from "react";
+import { useEffect, useMemo, useState } from "react";
 
 export const Contact = () => {
   const [activeErrorState, setActiveErrorState] = useState<
@@ -20,13 +20,9 @@ export const Contact = () => {
     [allEmptyFields]
   );
 
-  const handleChange = (e: React.ChangeEvent<HTMLTextAreaElement>) => {
-    if (e.target.value !== "") {
-      setIsSubmitActive(true);
-    } else if (e.target.value === "") {
-      setIsSubmitActive(false);
-    }
-  };
+  useEffect(() => {
+    setIsSubmitActive(Object.values(state).some(value => Boolean(value)))
+  }, [state])
 
   return (
     <main className="min-h-screen">
@@ -82,7 +78,7 @@ export const Contact = () => {
                 flex rounded-[35px] overflow-hidden`)}
               >
                 <textarea
-                  onChange={(e) => handleFormChange(e, () => handleChange(e))}
+                  onChange={(e) => handleFormChange(e)}
                   className={
                     "size-full tablet:h-[300px] focus:outline-none resize-none bg-transparent p-5"
                   }

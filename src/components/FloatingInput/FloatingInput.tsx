@@ -14,13 +14,6 @@ export default function FloatingLabelInput({
   isSubmitActive,
   setIsSubmitActive,
 }: FloatingLabelInputProps) {
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    if (e.target.value !== "") {
-      setIsSubmitActive(true);
-    } else if (e.target.value === "") {
-      setIsSubmitActive(false);
-    }
-  };
 
   return (
     <div className="relative">
@@ -38,7 +31,7 @@ export default function FloatingLabelInput({
         `}
         placeholder={label}
         onChange={(e) => {
-          onFieldChange(e, () => handleChange(e));
+          onFieldChange(e);
         }}
         value={value}
       />

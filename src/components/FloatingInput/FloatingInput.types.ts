@@ -10,5 +10,5 @@ export type FloatingLabelInputProps = {
   className?: string;
   isSubmitActive: boolean;
   setIsSubmitActive: React.Dispatch<React.SetStateAction<boolean>>;
-  onFieldChange: (e: ChangeEvent<HTMLInputElement | HTMLTextAreaElement>, callback: () => void) => void;
+  onFieldChange: (e: ChangeEvent<HTMLInputElement | HTMLTextAreaElement>, callback?: () => void) => void;
 };

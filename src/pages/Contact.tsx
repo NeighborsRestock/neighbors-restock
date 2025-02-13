@@ -27,7 +27,7 @@ export const Contact = () => {
   return (
     <main className="min-h-screen">
       <ParallaxHero>
-        <section className="flex flex-col desktop:h-screen size-full font-sans px-[100px] pb-[150px] pt-[75px] tablet:pt-[20px] mobile:pt-[15px] mobile:px-[40px]">
+        <section className="flex flex-col desktop:h-screen size-full font-sans px-[60px] pb-[150px] pt-[75px] tablet:pt-[20px] mobile:pt-[15px] mobile:px-[40px]">
           <section className="text-center py-[50px]">
             <h1 className="text-4xl tablet:text-2xl font-exo pb-[20px] font-semibold">
               {CONTACT_US_TITLE}

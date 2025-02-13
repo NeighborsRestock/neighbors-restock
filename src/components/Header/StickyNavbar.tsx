@@ -23,9 +23,11 @@ export const StickyNavbar = () => {
     <nav
       className={`${isCollapsed ? "masked" : ""} w-full z-20 font-lato sticky top-0 tablet:px-[10px] px-14 tablet:py-[4px] py-3 flex justify-between items-center bg-[#0e1b23]`}
     >
-      <h1 className="text-[35px] tablet:text-[20px]">
-        Neighbors<span className="text-blue-600">Restock</span>
-      </h1>
+      <a href="/" style={{ all: "unset" }}>
+        <h1 className="text-[35px] tablet:text-[20px] cursor-pointer">
+          Neighbors<span className="text-blue-600">Restock</span>
+        </h1>
+      </a>
       {deviceSize === "desktop" ? (
         <NavLinks
           onClickToClose={() => setIsCollapsed(false)}

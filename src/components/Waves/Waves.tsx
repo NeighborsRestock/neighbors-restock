@@ -1,5 +1,3 @@
-import React from "react";
-
 type WavesProps = {
   color?: string;
   zIndex?: number;

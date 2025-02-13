@@ -1,5 +1,3 @@
-import React from "react";
-import { Icon } from "../../config/types";
 import { ICONS } from "../../config/constants";
 import { IconsProps } from "./Icons.types";
 

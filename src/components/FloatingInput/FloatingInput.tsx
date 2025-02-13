@@ -1,7 +1,4 @@
-import type React from "react";
-import { useState } from "react";
 import { FloatingLabelInputProps } from "./FloatingInput.types";
-import { cn } from "@/lib/utils";
 
 export default function FloatingLabelInput({
   id,
@@ -11,10 +8,7 @@ export default function FloatingLabelInput({
   className,
   type = "text",
   onFieldChange,
-  isSubmitActive,
-  setIsSubmitActive,
 }: FloatingLabelInputProps) {
-
   return (
     <div className="relative">
       <input

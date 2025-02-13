@@ -1,4 +1,3 @@
-import { testBorder } from "@/config/constants";
 import { useState, useEffect, useRef } from "react";
 
 interface BrandImageProps {
@@ -20,8 +19,8 @@ export function BrandImage({
   containerClassName = "",
   objectFit = "contain",
 }: BrandImageProps) {
-  const [isLoaded, setIsLoaded] = useState(false);
-  const [isInView, setIsInView] = useState(false);
+  const [, setIsLoaded] = useState(false);
+  const [, setIsInView] = useState(false);
   const imgRef = useRef<HTMLImageElement>(null);
 
   useEffect(() => {

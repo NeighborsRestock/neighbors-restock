@@ -1,18 +1,29 @@
 import type React from "react";
 import { useState } from "react";
 import { FloatingLabelInputProps } from "./FloatingInput.types";
+import { cn } from "@/lib/utils";
 
 export default function FloatingLabelInput({
   id,
   label,
   pattern,
+  className,
   type = "text",
   onFieldChange,
+  isSubmitActive,
+  setIsSubmitActive,
 }: FloatingLabelInputProps) {
   const [value, setValue] = useState("");
 
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement>) =>
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     setValue(e.target.value);
+
+    if (e.target.value !== "" && !isSubmitActive) {
+      setIsSubmitActive(true);
+    } else if (e.target.value === "" && isSubmitActive) {
+      setIsSubmitActive(false);
+    }
+  };
 
   return (
     <div className="relative">
@@ -21,10 +32,16 @@ export default function FloatingLabelInput({
         type={type}
         id={id}
         name={id}
-        className="peer font-exo h-10 w-full border-b-2 text-4xl md:text-2xl mb-4 text-white placeholder-transparent bg-transparent outline-none focus:outline-none"
+        data-name={id}
+        className={`
+          peer font-exo h-10 w-full ${className ?? ""} border-b-2 
+          text-white placeholder-transparent bg-transparent 
+          outline-none focus:outline-none
+          text-4xl md:text-2xl mb-4 
+        `}
         placeholder={label}
         onChange={(e) => {
-          onFieldChange(e, () => handleChange(e))
+          onFieldChange(e, () => handleChange(e));
         }}
         value={value}
       />

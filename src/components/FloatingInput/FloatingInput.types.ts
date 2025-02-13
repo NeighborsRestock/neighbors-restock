@@ -1,9 +1,13 @@
+import { ContactFormInputs } from "@/hooks/types";
 import { ChangeEvent } from "react";
 
 export type FloatingLabelInputProps = {
-    id: string;
-    label: string;
-    pattern?: string;
-    type?: string;
-    onFieldChange: (e: ChangeEvent<HTMLInputElement | HTMLTextAreaElement>, callback: () => void) => void;
-  }
+  id: ContactFormInputs;
+  type?: string;
+  label: string;
+  pattern?: string;
+  className?: string;
+  isSubmitActive: boolean;
+  setIsSubmitActive: React.Dispatch<React.SetStateAction<boolean>>;
+  onFieldChange: (e: ChangeEvent<HTMLInputElement | HTMLTextAreaElement>, callback: () => void) => void;
+};

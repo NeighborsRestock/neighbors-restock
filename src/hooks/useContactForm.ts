@@ -1,27 +1,20 @@
 import { EMAIL } from "@/config/constants";
-import { ChangeEvent, FormEvent, useReducer } from "react";
+import { ChangeEvent, FormEvent, useMemo, useReducer, useState } from "react";
+import { ContactFormAction, ContactFormInputs, ContactFormState, INIT_STATE } from "./types";
 
-type ContactFormState = {
-  name: string;
-  email: string;
-  phone: string;
-  company: string;
-  message: string;
-};
+function useContactForm () {
+  const [ state, dispatch ] = useReducer(_formReducer, INIT_STATE);
+  const [ allEmptyFields, setAllEmptyFields ] = useState<string[]>([]);
 
-type ContactFormAction = | { type: 'FIELD_CHANGE'; fieldName: keyof ContactFormState; payload: string; }
-  | { type: 'RESET'; };
+  const emptyFields = useMemo(
+    () => {
+      return Object.entries(state)
+        .filter((pair) => pair[ 1 ] === "")
+        .map(([ key ]) => key) as ContactFormInputs[];
+    },
+    [ state ],
+  );
 
-const initState: ContactFormState = {
-  name: '',
-  email: '',
-  company: '',
-  phone: '',
-  message: '',
-};
-
-const useContactForm = () => {
-  const [ state, dispatch ] = useReducer(formReducer, initState);
 
   function handleFormChange (e: ChangeEvent<HTMLInputElement | HTMLTextAreaElement>, callback?: () => void) {
     if (callback) callback();
@@ -34,14 +27,18 @@ const useContactForm = () => {
 
   function handleFormSubmit (e: FormEvent): void {
     e.preventDefault();
-    console.log('Email submitted:', state);
+    if (emptyFields.length > 0) {
+      setAllEmptyFields(emptyFields);
+      return;
+    }
     window.location.href = `
-              mailto:${EMAIL}?body=${state.message}&subject=${encodeURI(state.name ?? "")} from ${encodeURI(state.company ?? "")}`;
-    // You can send the data to an API here
+      mailto:${EMAIL}
+      ?body=${state.message}
+      &subject=${encodeURI(state.name ?? "")} from ${encodeURI(state.company ?? "")}`;
     dispatch({ type: 'RESET' }); // Reset the form after submission
   };
 
-  function formReducer (state: ContactFormState, action: ContactFormAction) {
+  function _formReducer (state: ContactFormState, action: ContactFormAction) {
     switch (action.type) {
       case 'FIELD_CHANGE':
         return {
@@ -49,14 +46,17 @@ const useContactForm = () => {
           [ action.fieldName ]: action.payload
         };
       case 'RESET':
-        return initState;
+        return INIT_STATE;
       default:
         return state;
     }
   }
 
   return {
-    handleFormChange, handleFormSubmit, state
+    handleFormChange,
+    handleFormSubmit,
+    allEmptyFields,
+    state,
   };
 };
 

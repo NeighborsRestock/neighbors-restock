@@ -25,9 +25,10 @@ function useContactForm () {
     });
   };
 
-  function handleFormSubmit (e: FormEvent, callback?: () => void): void {
+  function handleFormSubmit (e: FormEvent, callback?: () => void, onError?: () => void): void {
     e.preventDefault();
     if (emptyFields.length > 0) {
+      if (onError) onError();
       setAllEmptyFields(emptyFields);
       return;
     }

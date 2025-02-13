@@ -31,7 +31,7 @@ export default function FloatingLabelInput({
         name={id}
         data-name={id}
         className={`
-          peer font-exo h-10 w-full ${className ?? ""} border-b-2 
+          peer font-exo h-10 w-full ${className ?? ""} ${value !== "" ? "border-white" : ""} border-b-2 
           text-white placeholder-transparent bg-transparent 
           outline-none focus:outline-none
           text-4xl md:text-2xl mb-4 

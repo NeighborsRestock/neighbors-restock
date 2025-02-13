@@ -5,12 +5,20 @@ import { CONTACT_US_SUBTEXT, CONTACT_US_TITLE } from "@/config/constants";
 import { CONTACT_FORM_NAME } from "@/hooks/types";
 import useContactForm from "@/hooks/useContactForm";
 import { cn } from "@/lib/utils";
-import { useState } from "react";
+import { useMemo, useState } from "react";
 
 export const Contact = () => {
+  const [activeErrorState, setActiveErrorState] = useState<
+    "border-[red]" | "border-white"
+  >("border-white");
   const [isSubmitActive, setIsSubmitActive] = useState(false);
   const { handleFormChange, handleFormSubmit, allEmptyFields, state } =
     useContactForm();
+
+  const hasMessage = useMemo(
+    () => allEmptyFields.includes("message"),
+    [allEmptyFields]
+  );
 
   const handleChange = (e: React.ChangeEvent<HTMLTextAreaElement>) => {
     if (e.target.value !== "") {
@@ -57,7 +65,7 @@ export const Contact = () => {
                       }
                       onFieldChange={handleFormChange}
                       id={name}
-                      className={`${allEmptyFields.includes(name) && "border-b-[red]"}`}
+                      className={`${allEmptyFields.includes(name) && activeErrorState}`}
                       isSubmitActive={isSubmitActive}
                       setIsSubmitActive={setIsSubmitActive}
                       label={temp}
@@ -67,9 +75,9 @@ export const Contact = () => {
               </section>
               <section
                 className={cn(`
-                text-2xl h-full 
-                ${allEmptyFields.includes("message") && "border-b-[red]"}
-                tablet:text-[20px] tablet:w-full border-white 
+                text-2xl h-full
+                ${hasMessage && activeErrorState}
+                tablet:text-[20px] tablet:w-full  
                 border-[1px] border-solid font-exo h-full 
                 flex rounded-[35px] overflow-hidden`)}
               >
@@ -85,7 +93,14 @@ export const Contact = () => {
                 <div className="h-full min-h-[170px] self-center w-[50px] relative">
                   <button
                     onClick={(e) =>
-                      handleFormSubmit(e, () => setIsSubmitActive(false))
+                      handleFormSubmit(
+                        e,
+                        () => {
+                          setIsSubmitActive(false);
+                          setActiveErrorState("border-white");
+                        },
+                        () => setActiveErrorState("border-[red]")
+                      )
                     }
                     className={cn(`${isSubmitActive ? "left-0 rounded-l-[50%]" : "left-[100%]"} 
                     transition-transform transition-all px-[2px] duration-300 ease-in-out 

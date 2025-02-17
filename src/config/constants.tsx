@@ -1,8 +1,8 @@
-import { BrandInfo, CardInfo } from "./types";
+import { CardInfo } from "./types";
 
-export const PHONE_NUMBER = "123-456-7890";
+export const PHONE_NUMBER = "347-470-6266";
 
-export const EMAIL = "abc@xyz.com";
+export const EMAIL = "mikhail@neighborsrestock.com";
 
 export const HERO_TEXT = "Learn about us";
 
@@ -90,13 +90,6 @@ export const ICONS = {
     </svg>
   ),
 } as const;
-
-export const BRANDS: BrandInfo[] = [
-  {
-    key: "Placeholder Company 1",
-    imageUrl: "logo-2.png",
-  },
-];
 
 export const CARD_INFO: CardInfo[] = [
   {

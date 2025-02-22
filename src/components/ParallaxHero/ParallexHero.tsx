@@ -28,7 +28,7 @@ export const ParallaxHero: React.FC<ParallaxHeroProps> = ({
   }, []);
 
   return (
-    <section className={`relative min-h-[95vh] overflow-hidden ${className ?? ''}`}>
+    <section className={`relative moible:min-h-[95vh] min-h-[95vh] tablet:min-h-[125vh] overflow-hidden ${className ?? ''}`}>
       <div
         className="absolute inset-0 bg-cover bg-center"
         style={{
